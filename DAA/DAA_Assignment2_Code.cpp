@@ -38,7 +38,7 @@ void printCodes(MinHeapNode *root, string str)
     printCodes(root->right, str + "1");
 }
 
-void HuffmanCodes(char data[], int freq[], int size)
+void HuffmanCodes(vector<char> &data, vector<int> &freq, int size)
 {
     MinHeapNode *left, *right, *top;
 
@@ -68,13 +68,32 @@ void HuffmanCodes(char data[], int freq[], int size)
 
 int main()
 {
+    int n;
+    cout << "Enter number of characters: ";
+    cin >> n;
+    cout << endl;
 
-    char arr[] = {'a', 'b', 'c', 'd', 'e', 'f'};
-    int freq[] = {5, 9, 12, 13, 16, 45};
+    vector<char> arr(n);
+    vector<int> freq(n);
 
-    int size = sizeof(arr) / sizeof(arr[0]);
+    cout << "Enter the characters: ";
+    for (int i = 0; i < n; i++)
+    {
+        char temp;
+        cin >> temp;
+        arr[i] = temp;
+    }
+    cout << endl;
 
-    HuffmanCodes(arr, freq, size);
+    cout << "Enter the frequencies: ";
+    for (int i = 0; i < n; i++)
+    {
+        int temp;
+        cin >> temp;
+        freq[i] = temp;
+    }
+    cout << endl;
 
+    HuffmanCodes(arr, freq, n);
     return 0;
 }
