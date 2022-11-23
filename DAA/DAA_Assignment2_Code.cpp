@@ -25,7 +25,7 @@ struct compare
     }
 };
 
-void printCodes(struct MinHeapNode *root, string str)
+void printCodes(MinHeapNode *root, string str)
 {
 
     if (!root)
@@ -40,7 +40,7 @@ void printCodes(struct MinHeapNode *root, string str)
 
 void HuffmanCodes(char data[], int freq[], int size)
 {
-    struct MinHeapNode *left, *right, *top;
+    MinHeapNode *left, *right, *top;
 
     priority_queue<MinHeapNode *, vector<MinHeapNode *>, compare> minHeap;
 
